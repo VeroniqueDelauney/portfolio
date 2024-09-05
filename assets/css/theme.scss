@@ -43,6 +43,50 @@ header {
     padding-top: 3em
 }
 
+
+/* -- SWIPPER -- */
+.competencies {
+    margin: 5em auto;
+    overflow: hidden;
+    .swiper-container {
+        margin: 0 auto;
+        width: 80%;
+        .swiper-slide {
+            width: 300px;
+            max-width: 300px;
+            padding: 3em;
+            background-color: $grey;
+            border: 1px solid #CCC;
+            &:hover {
+                background-color: $purple;    
+                color: $white;
+            }
+            img {
+                width: 50%;
+                padding: 1em 0;
+            }
+            .title {
+                font-size:2em;
+                font-family: PlayfairDisplay-Italic;
+                padding: 1em 0;
+            }
+        }
+    }
+}
+
+.center {
+    text-align: center;
+    margin: 0 auto !important;
+    padding: 2em 0;
+    width: 60%;
+    p {
+        margin: 0;
+        font-family: PlayfairDisplay-Italic;
+        font-size: 1.5em;
+        line-height: 2em;
+    }
+}
+
 .webPreviews {
     display: flex;
     flex-direction: row;
@@ -108,7 +152,20 @@ header {
                 transition: font-size 2s ease, font-family 2s ease;
             }
         }
-        
+        .links {
+            padding: 2em 0 0 0;            
+            img {
+                width: 2em
+            }
+            a {
+                border: none;
+                text-decoration: none;
+                
+                &.spaced {
+                    margin-left: 0.3em
+                }
+            }
+        }
     }
 }
 
@@ -120,7 +177,7 @@ header {
     h2 {
         font-family: PlayfairDisplay-Regular;
         color: $purple;
-        letter-spacing: 0.4em;
+        letter-spacing: 0.2em;
         font-weight: 200;
         font-size: 4em
     }
@@ -152,7 +209,234 @@ header {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+    }  
+
+    &#competencies {
+        padding-top: 0;
+        margin-top: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 4em;
+        .left {
+            text-align: right;
+            width: 50%;
+            animation: movingLeft 2s linear;
+            @keyframes movingLeft {
+                0% { transform: translateX(0px) }                
+                100%   { transform: translateX(400px) }
+            }
+            p {
+                margin: 0;
+                font-family: PlayfairDisplay-Italic;
+                font-size: 1.5em;
+                line-height: 2em;
+            }
+        }
+        .right {
+            width: 50%;
+            animation: movingRight 2s linear;
+            @keyframes movingRight {
+                0% { transform: translateX(0px) }                
+                100%   { transform: translateX(-400px) }
+            }
+        }     
+
+        .group {
+            display: flex;
+            flex-direction: row;
+            margin: 0.5em 0;
+            .left {
+                width: 40%;
+                text-align: right;
+            }
+        }       
+          
+        .logo-holder {
+            background: #f2f2f2;
+            width: 80%;
+            height: 220px;
+            position: relative;
+            margin: 0 auto ;
+            padding: 2em;
+            -webkit-transform: translateZ(0);
+        }
+        
+        .bg {          
+        position: absolute;
+        top: 9px;
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+        background: url(http://boutique.flarework.com/wp-content/themes/boutique/img/logo_large.png) center 0px no-repeat ;
+            background-size: contain;
+            -webkit-filter: drop-shadow(0px 6px 25px rgba(0,0,0,0.5));
+        }
+        
+        .bar {
+            position: relative;
+            height: 1em;
+            background: $grey;
+            width: 0%;
+            top: 0px;
+            left: 18px;
+            margin-top: 4px;
+            box-shadow: 0 0 3px rgba(192,192,192,0.9);
+            animation: fill 5s infinite alternate, colors 5s infinite alternate;
+        }
+        
+        .bar.fill1 {
+        animation: fill-1 5s infinite alternate, colors 5s infinite alternate;
+        }
+        
+        .bar.fill2 {
+            animation:  fill-2 5s infinite alternate, colors 5s infinite alternate;
+        }          
+        
+        .bar.fill3 {
+            animation:  fill-3 5s infinite alternate, colors 5s infinite alternate;
+        }          
+        
+        .bar.fill4 {
+            animation:  fill-4 5s infinite alternate, colors 5s infinite alternate;
+        }
+        
+        .bar.fill5 {
+            animation:  fill-5 5s infinite alternate, colors 5s infinite alternate;
+        }
+        
+        .bar.fill6 {
+            animation:  fill-6 5s infinite alternate, colors 5s infinite alternate;
+        }      
+        
+        @keyframes fill {
+        0%   { width: 0; }
+        33%  { width: 30px;}
+        66%  { width: 10px;}
+        100% { width: 105px; }
+        }
+        
+        @keyframes fill-1 {
+        0%   { width: 0; }
+        33%  { width: 50px;}
+        66%  { width: 20px;}
+        100% { width: 130px; }
+        }
+        
+        @keyframes fill-2 {
+        0%   { width: 0; }
+        33%  { width: 90px;}
+        66%  { width: 70px;}
+        100% { width: 136px; }
+        }
+        
+        @keyframes fill-3 {
+        0%   { width: 0; }
+        33%  { width: 50px;}
+        66%  { width: 24px;}
+        100% { width: 109px; }
+        }
+        
+        @keyframes fill-4 {
+        0%   { width: 0; }
+        33%  { width: 98px;}
+        66%  { width: 34px;}
+        100% { width: 99px; }
+        }
+        
+        @keyframes fill-5 {
+        0%   { width: 0; }
+        33%  { width: 30px;}
+        66%  { width: 10px;}
+        100% { width: 148px; }
+        }          
+        
+        @keyframes fill-6 {
+        0%   { width: 0; }
+        33%  { width: 48px;}
+        66%  { width: 22px;}
+        100% { width: 140px; }
+        }
+        
+        @keyframes colors {
+        0% { background-color: $grey;}
+        50% { background-color: $purple;}
+        100% { background-color: $purple;}
+        }
     }
+}
+
+.fullWidth {
+    width: 90%;
+    
+    overflow: hidden;
+    .images {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        border: 5px solid pink;
+        .square {
+            margin : 0 1px
+        }   
+        &:hover {
+            opacity: 1;
+            animation: movingLeft 3s ease-in-out;
+            @keyframes movingLeft {
+                0% { transform: translateX(-400px) }                
+                100%   { transform: translateX(400px) } 
+            }
+        }
+        // &:not(:hover) {
+        //     animation: movingRight 4s linear;
+        //     @keyframes movingRight {
+        //         0% { transform: translateX(400px) }                
+        //         100% { transform: translateX(0px) }      
+        //     }
+        // }
+    }
+    
+}
+
+
+header {
+    background: #eaeaea;
+    padding: 2em;
+
+    .logo {
+        margin: 0 auto;
+        width: 250px;
+        transition: all 4s ease-in-out;
+        img {
+            transition: all 3s ease-in-out;
+            &:hover {
+                transform: scale(1.1) rotate(180deg);                
+            }
+        }
+        &:hover {
+            
+            .logotype {
+                transform: scale(1.2);
+            }
+        }
+        .logotype {
+            text-align: center;
+            padding: 1em;
+            font-size: 1.5em;
+            .purple {
+                color: $purple
+            }
+        }
+    }
+    
+    
+
+
+
+
+    // #letter1:hover > div#top-div2 {
+    //     /* code */
+    // }
+    
 }
 
 
@@ -168,7 +452,9 @@ header {
         width: 80%;
         img {
             border-radius: 50%;
-            width: 60%;
+            &.portrait {
+                width: 60%;
+            }
             &:hover {
                 transition: width 4s, opacity 4s;
                 opacity: 0.5;
@@ -187,6 +473,14 @@ header {
             @keyframes movingLeft {
                 0% { transform: translateX(0px) }                
                 100%   { transform: translateX(400px) }
+            }
+            .icons {
+                img {
+                    border-radius: 0;
+                    width: auto;
+                    height: 100px;
+                    padding: 0.5em
+                }
             }
         }
         .right {

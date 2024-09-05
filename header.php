@@ -31,22 +31,19 @@
 <div id="page">
 	<header id="masthead" class="site-header">
 
-	<center>
-		<img src="<?php echo get_stylesheet_directory_uri() . '/assets/img/v.png'; ?> " alt="Véronique Delauney" title="Véronique Delauney" />
-	</center>
+	<header>
+		<div class="logo">
+			<img src="<?php echo get_stylesheet_directory_uri() . '/assets/img/v.png'; ?> " alt="Véronique Delauney" title="Véronique Delauney" />
 
-	<style>
-.label:after{
-    content:'text I want to change';
-}
-.label:hover:after{
-    content:'changed text';
-}
-</style>
-<body>
-<p>text <span class="label"></span> text</p>
-</body>
-	
+			<div class="logotype">
+				Développement Web <span class="purple">&</span> Graphisme
+			</div>
+
+		</div>
+		
+	</header>
+
+
 
 		<div class="topnav">
 

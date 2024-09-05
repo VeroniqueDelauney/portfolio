@@ -17,7 +17,12 @@ function theme_enqueue_styles() {
 		'ajaxurl' 					=> admin_url( 'admin-ajax.php' ),		
 		'is_logged_in'				=> (is_user_logged_in())
 	]);
+    wp_enqueue_style( 'swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+    wp_enqueue_script( 'swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js');
+    wp_enqueue_script( 'app-script', get_stylesheet_directory_uri() . '/assets/js/app.js', array('skrollr', 'swiper-js') ); // On indique que c'est dépendant de skrollr
 }
+
+$path = '/js/app.js';
 
 add_action( 'after_setup_theme', 'theme_functions' );
 function theme_functions() {
@@ -36,22 +41,42 @@ add_action( 'init', 'register_menus' );
 
 
 
+// Shortcode pour les compétences
+function competenciesShortCode() {
+    ob_start();
+    include('includes/competenciesCPT.php');
+    $data = ob_get_contents();
+    ob_end_clean();
+    return $data;
+}    
+add_shortcode('competenciesCPT', 'competenciesShortCode');
 
 
-function veroniquedelauney_register_post_types() {	
-    // CPT Portfolio
+// Shortcode pour les sites web
+function websitesShortCode() {
+    ob_start();
+    include('includes/websitesCPT.php');
+    $data = ob_get_contents();
+    ob_end_clean();
+    return $data;
+}    
+add_shortcode('websitesCPT', 'websitesShortCode');
+
+
+// CPT Compétences
+function competenciesCPT() {	
     $labels = array(
-        'name' => 'Photos',
-        'all_items' => 'Toutes les photos',  // affiché dans le sous menu
-        'singular_name' => 'Photo',
-        'add_new' => 'Ajouter une photo',
-        'add_new_item' => 'Ajouter une photo',
-        'edit_item' => 'Modifier la photo',
-        'view_item' => 'Voir la photo',
-        'search_items' => 'Rechercher des photos',
-        'menu_name' => 'Photos',
-        'not_found' => 'Aucune photo trouvée',
-        'not_found_in_trash' => 'Aucune photo trouvée dans la corbeille'
+        'name' => 'Compétences',
+        'all_items' => 'Compétences',  // affiché dans le sous menu
+        'singular_name' => 'Compétence',
+        'add_new' => 'Ajouter une compétence',
+        'add_new_item' => 'Ajouter une compétence',
+        'edit_item' => 'Modifier une compétence',
+        'view_item' => 'Voir la compétence',
+        'search_items' => 'Rechercher des compétences',
+        'menu_name' => 'Compétences',
+        'not_found' => 'Aucune compétence trouvée',
+        'not_found_in_trash' => 'Aucune compétence trouvée dans la corbeille'
     );
 	$args = array(
         'labels' => $labels,
@@ -60,56 +85,51 @@ function veroniquedelauney_register_post_types() {
         'has_archive' => true,
         'show_ui' => true,
         'supports' => array('title', 'thumbnail'),
+        // 'supports' => array( 'title', 'editor','thumbnail' ),
         'menu_position' => 5, 
-        'menu_icon' => 'dashicons-camera',
-        'meta_key' => 'Photo', // nom du champ personnalisé
+        'menu_icon' => 'dashicons-thumbs-up',
+        'meta_key' => 'Competency', // nom du champ personnalisé
+        'orderby' => 'meta_value_num',
+        'order' => 'ASC'
 	);
-	register_post_type( 'photos', $args );
-
-
-
-    // Déclaration de la taxonomie "Catégorie"
-    $labels = array(
-        'name' => 'Catégories',
-        'singular_name' => 'Catégorie',
-        'add_new_item' => 'Ajouter une catégorie',
-        'edit_item' => 'Modifier la catégorie',
-    );    
-    $args = array(
-        'labels' => $labels,
-        'hierarchical' => true,
-        'public' => true,
-        'show_ui' => true,
-        'show_admin_column' => true,
-        'show_in_nav_menus' => true,
-        'show_tagcloud' => true,
-        'show_in_rest' => true, // Affichage de la taxonomie dans Gutemberg
-        'rewrite' => array( 'slug' => 'cats' ),
-        );
-    register_taxonomy( 'cats', 'photos', $args ); // Ajout de la nouvelle taxonomie au nouveau CPT "Photo"
-
-    // Déclaration de la taxonomie "Format"
-    $labels = array(
-        'name' => 'Formats',
-        'singular_name' => 'Format',
-        'add_new_item' => 'Ajouter un format',
-        'edit_item' => 'Modifier le format',
-    );    
-    $args = array(
-        'labels' => $labels,
-        'hierarchical' => true,
-        'public' => true,
-        'show_ui' => true,
-        'show_admin_column' => true,
-        'show_in_nav_menus' => true,
-        'show_tagcloud' => true,
-        'show_in_rest' => true, // Affichage de la taxonomie dans Gutemberg
-        'rewrite' => array( 'slug' => 'formats' ),
-        );
-    register_taxonomy( 'formats', 'photos', $args ); // Ajout de la nouvelle taxonomie au nouveau CPT "Photo"
+	register_post_type( 'competency', $args );
 }
-add_action( 'init', 'veroniquedelauney_register_post_types' ); // "Init" est un hook qui lance la fonction
+add_action( 'init', 'competenciesCPT' ); // Le hook init lance la fonction
 
+
+
+// CPT Websites
+function websitesCPT() {	
+    $labels = array(
+        'name' => 'Sites web',
+        'all_items' => 'Sites web',  // affiché dans le sous menu
+        'singular_name' => 'Site web',
+        'add_new' => 'Ajouter un site web',
+        'add_new_item' => 'Ajouter un site web',
+        'edit_item' => 'Modifier un site web',
+        'view_item' => 'Voir le site web',
+        'search_items' => 'Rechercher des sites web',
+        'menu_name' => 'Sites web',
+        'not_found' => 'Aucun site web trouvé',
+        'not_found_in_trash' => 'Aucun site web trouvé dans la corbeille'
+    );
+	$args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_in_rest' => true,
+        'has_archive' => true,
+        'show_ui' => true,
+        'supports' => array('title', 'thumbnail'),
+        // 'supports' => array( 'title', 'editor','thumbnail' ),
+        'menu_position' => 5, 
+        'menu_icon' => 'dashicons-admin-site',
+        'meta_key' => 'Website', // nom du champ personnalisé
+        'orderby' => 'meta_value_num',
+        'order' => 'ASC'
+	);
+	register_post_type( 'website', $args );
+}
+add_action( 'init', 'websitesCPT' ); // Le hook init lance la fonction
 
 
 

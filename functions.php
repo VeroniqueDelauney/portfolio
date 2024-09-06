@@ -8,6 +8,7 @@ define('THEME_DIR', get_template_directory()); // Chemin absolu
 $assets_version = wp_get_theme()['Version']; // Récupère les infos du fichier style.css
 define('ASSETS_VERSION', $assets_version);
 include "ajax.php";
+include "vendor/autoload.php";
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' ); // Ajoute les scripts et les styles
 function theme_enqueue_styles() {

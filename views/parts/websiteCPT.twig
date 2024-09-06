@@ -1,0 +1,36 @@
+<div class="webPreviews">
+    <!-- Slides -->
+    {% for website in websites %}      
+    <div class="block">
+        <!-- Scrollable element -->
+        <div class="scroll" >
+            <img src="{{ get_image(website.image).src('large') }}" alt="{{ website.nom }}" alt="{{ website.nom }}" >
+        </div>
+        <div class="blockContent">
+            <!-- Phone shape -->
+            <div class="phone">
+                <img src="{{ get_image(website.telephone).src('medium') }}"  alt="{{ website.nom }}" alt="{{ website.nom }}" >       
+            </div>
+        </div>
+        <!-- Number and title -->	
+        <div class="bottom">
+            <div class="number">0{{ website.numero }}.</div>
+            <div class="title">{{ website.nom }}</div>
+            <div class="links">
+                <!-- Link to github -->
+                {% if website.git is not null and website.git is not empty %}
+                <a href="{{ website.git }}" title="Voir le Repository Git" alt="Voir le Repository Git" target="_blank">
+                    <img src="{{ theme_uri }}/assets/img/icon_git.png" alt="Voir le Repository Git" title="Voir le Repository Git" />
+                </a>
+                {% endif %}
+                <!-- Link to website -->
+                {% if website.lien is not null and website.lien is not empty %}
+                <a href="{{ website.git }}" title="Voir le site web" alt="Voir le site web" target="_blank">
+                    <img src="{{ theme_uri }}/assets/img/icon_web.png" alt="Voir le site web" title="Voir le site web" />
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

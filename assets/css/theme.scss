@@ -412,26 +412,20 @@ header {
                 transform: scale(1.1) rotate(180deg);                
             }
         }
-        &:hover {
-            
-            .logotype {
-                transform: scale(1.2);
-            }
-        }
         .logotype {
             text-align: center;
             padding: 1em;
             font-size: 1.5em;
+            transition: all 3s ease-in-out;
             .purple {
                 color: $purple
+            }
+            &:hover {  
+                transform: scale(1.3); 
             }
         }
     }
     
-    
-
-
-
 
     // #letter1:hover > div#top-div2 {
     //     /* code */

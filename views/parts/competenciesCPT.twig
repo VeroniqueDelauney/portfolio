@@ -1,0 +1,16 @@
+<div class="competencies">
+    <!-- Slider main container -->
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            {% for competency in competencies %}   
+                <div class="swiper-slide">     
+                    <img src="{{ get_image(competency.image).src('medium') }}"  >     
+                    <div class="title">{{ competency.titre }}</div>
+                    {{ competency.description }}
+                </div>
+            {% endfor %}   
+        </div>
+    </div>
+</div>

@@ -4,56 +4,66 @@
 
     <main id="primary" class="site-main home">
 
-	<div class="section">
-		<h2>Portfolio</h2>
-	</div>
+	<section>
+		<a name="competences"></a>
+		<div class="sectionContent">
+			<h2>Portfolio</h2>
+		</div>
 
-	<!-- Link to websites CPT -->
-    {% include "parts/websiteCPT.twig" with {'websites' : websites, 'theme_uri' : theme_uri} %}
+		<!-- Link to websites CPT -->
+		{% include "parts/websiteCPT.twig" with {'websites' : websites, 'theme_uri' : theme_uri} %}
+	</section>
 
-	<div class="section" id="words">
-		<span class="first">
-			Imaginer.
-		</span> 
-		<span class="second">
-			Créer.
-		</span> 
-		<span class="third">
-			Recommencer.
-		</span>
-	</div>
+	<section>
+		<a name="a-propos"></a>
+		<div class="sectionContent words">
+			<span class="first">
+				Imaginer.
+			</span> 
+			<span class="second">
+				Créer.
+			</span> 
+			<span class="third">
+				Recommencer.
+			</span>
+		</div>
+	</section>
 
-	<div class="about">
-		<div class="section">
-			<div class="left">
-				<img class="portrait" src="{{ theme_uri }}/assets/img/veronique_delauney_photo.jpeg" alt="Véronique Delauney" title="Véronique Delauney" />
+	<section>		
+		<div class="about">
+			<div class="sectionContent">
+				<div class="left">
+					<img class="portrait" src="{{ theme_uri }}/assets/img/veronique_delauney_photo.jpeg" alt="Véronique Delauney" title="Véronique Delauney" />
+				</div>
+				<div class="right">
+					<h2>A propos</h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultricies est nec augue gravida auctor. Sed dictum efficitur felis, sit amet porttitor nulla placerat eu. Donec urna massa, dapibus eu hendrerit a, convallis cursus est. Aenean at libero nec massa pulvinar iaculis. Mauris commodo justo ipsum. In sodales tristique tortor porttitor bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque fermentum dictum lectus, at maximus mi interdum iaculis. Donec hendrerit augue leo. Nullam ut ex ac libero auctor porttitor.
+					</p>
+				</div>
 			</div>
-			<div class="right">
-				<h2>A propos</h2>
+		</div>
+	</section>
+
+	<a name="competences"></a>
+	<section>
+		<div class="sectionContent">
+			<h2>Compétences</h2>
+			<div class="center">
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultricies est nec augue gravida auctor. Sed dictum efficitur felis, sit amet porttitor nulla placerat eu. Donec urna massa, dapibus eu hendrerit a, convallis cursus est. Aenean at libero nec massa pulvinar iaculis. Mauris commodo justo ipsum. In sodales tristique tortor porttitor bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque fermentum dictum lectus, at maximus mi interdum iaculis. Donec hendrerit augue leo. Nullam ut ex ac libero auctor porttitor.
+					A votre écoute, je vous accompagne dans l'intégralité de votre projet numérique.
+				</p>
+				<p>
+					De la conception de votre identité visuelle à la réalisation de vos supports print et web, je développe pour vous une stratégie complète à votre image.
 				</p>
 			</div>
+
+			<!-- Link to competencies CPT -->
+			{% include "parts/competenciesCPT.twig" with {'competencies' : competencies, 'theme_uri' : theme_uri} %}
 		</div>
-	</div>
+	</section>
 
-	<div class="section">
-		<h2>Compétences</h2>
-		<div class="center">
-			<p>
-				A votre écoute, je vous accompagne dans l'intégralité de votre projet numérique.
-			</p>
-			<p>
-				De la conception de votre identité visuelle à la réalisation de vos supports print et web, je développe pour vous une stratégie complète à votre image.
-			</p>
-		</div>
 
-		<!-- Link to competencies CPT -->
-    	{% include "parts/competenciesCPT.twig" with {'competencies' : competencies, 'theme_uri' : theme_uri} %}
-		
-	</div>
-
-	
 	<!-- <div class="section" id="competencies">
 		<div class="left">			
 		</div>
@@ -110,35 +120,51 @@
 
 
 
-	<!-- Sliding images -->
-	<div class="fullWidth">
-		<div class="images">
-			<div class="square">
-				<img class="portrait" src="{{ theme_uri }} . '/assets/img/square3.jpg'; ?> " alt="Véronique Delauney" title="Véronique Delauney" />
-			</div>
-			<div class="square">
-				<img class="portrait" src="{{ theme_uri }} . '/assets/img/square2.jpg'; ?> " alt="Véronique Delauney" title="Véronique Delauney" />
-			</div>
-			<div class="square">
-				<img class="portrait" src="{{ theme_uri }} . '/assets/img/square3.jpg'; ?> " alt="Véronique Delauney" title="Véronique Delauney" />
-			</div>
-			<div class="square">
-				<img class="portrait" src="{{ theme_uri }} . '/assets/img/square2.jpg'; ?> " alt="Véronique Delauney" title="Véronique Delauney" />
-			</div>
-			<div class="square">
-				<img class="portrait" src="{{ theme_uri }} . '/assets/img/square3.jpg'; ?> " alt="Véronique Delauney" title="Véronique Delauney" />
-			</div>
-			<div class="square">
-				<img class="portrait" src="{{ theme_uri }} . '/assets/img/square2.jpg'; ?> " alt="Véronique Delauney" title="Véronique Delauney" />
-			</div>
-			<div class="square">
-				<img class="portrait" src="{{ theme_uri }} . '/assets/img/square3.jpg'; ?> " alt="Véronique Delauney" title="Véronique Delauney" />
-			</div>
-			<div class="square">
-				<img class="portrait" src="{{ theme_uri }} . '/assets/img/square2.jpg'; ?> " alt="Véronique Delauney" title="Véronique Delauney" />
+	<!-- Détails compétences -->
+
+		<div class="fullWidth">
+			<div class="blocks">
+
+				<div class="square" id="FirstSquare">
+					<h2 class="titleSquare">Publications</h2>
+					<!-- Hidden -->
+					<div class="textBlock">						
+						<p>
+							<span class="title">Publications</span><br>
+							Je conçois les supports imprimés qui mettront en valeur votre activité et vos produits : flyers, affiches, prospectus, catalogues, brochures... L'image de marque et l'identité de votre entreprise sont intégrés grâce à une mise en page soigneuse et professionnelle.
+						</p>
+					</div>
+				</div>
+
+				<div class="square" id="SecondSquare">
+					<h2 class="titleSquare">Développement web</h2>
+					<!-- Hidden -->
+					<div class="textBlock">
+						<p>
+							<span class="title">Développement web</span><br>
+							Je vous accompagne de A à Z dans la réalisation de votre site internet. Nous définissons ensemble vos besoins, vos attentes, votre charte graphique. Puis nous développons pour vous un site internet sur-mesure, à votre image et totalement personnalisé.
+						</p>
+					</div>
+				</div>
+
+				<div class="square" id="ThirdSquare">
+					<h2 class="titleSquare">Illustrations</h2>
+					<!-- Hidden -->
+					<div class="textBlock">
+						<p>
+							<span class="title">Illustrations</span><br>
+							Au gré de mon inspiration, mes crayons et pinceaux mettent sur papier des personnages imaginaires, objets familiers ou univers variés. Mes aquarelles sont totalement personnalisables, avec comme fil conducteur douceur, bonne humeur et un soupçon de poésie.
+						</p>
+					</div>
+				</div>
+
+				
 			</div>
 		</div>
-	</div>
+
+
+
+
 
 
 </main>

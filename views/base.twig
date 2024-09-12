@@ -16,6 +16,10 @@
                     <div class="logotype">
                         Développement Web <span class="purple">&</span> Graphisme
                     </div>
+                    <br>
+                    <a href="#portfolio">Portfolio</a><br>
+			        <a href="#a-propos">A propos</a><br>
+                    <a href="#competences">Compétences</a><br>
                 </div>		
             </header>    
 
@@ -24,44 +28,14 @@
                 {% endblock %}
             </main>
 
-            <footer>
-                {% block footer %}
-                    <p>Brought to you with ❤ by the Timber.</p>
-                {% endblock %}
-                {{ function('wp_footer') }}
-            </footer>
-        </div>
+            <section>
+                <footer>
+                    {% block footer %}
+                        {% include "parts/footer.twig" with {'websites' : websites, 'theme_uri' : theme_uri} %}
+                    {% endblock %}
+                </footer>
+            </section>
+            
+        </div>        
     </body>
-
-
-   
-<script>
-    var mySwiper = new Swiper('.swiper-container', {
-    loop: true,
-    speed: 1000,
-    autoplay: {
-        delay: 3000,
-    },
-    effect: 'coverflow',
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: 'auto',
-    coverflowEffect: {
-        rotate: 0,
-        stretch: 80,
-        depth: 200,
-        modifier: 1,
-        slideShadows: false,
-    },
-
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-
-})
-</script>
-
-
 </html>

@@ -38,7 +38,7 @@
 			<div class="logotype">
 				Développement Web <span class="purple">&</span> Graphisme
 			</div>
-
+			
 		</div>
 		
 	</header>

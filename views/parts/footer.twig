@@ -2,14 +2,17 @@
     <div class="group">
         <div>
             <p>
-                <strong>Véronique Delauney</strong><br>
-                Développement Web & Graphisme
+                <strong>{{ site_options.nom_complet }}</strong><br>
+                Développement Web & Graphisme<br>
+               
             </p>
         </div>
         <div>
             <a href="#porfolio" alt="Portfolio" title="Portfolio">Portfolio</a>
             <a href="#a-propos" alt="A propos" title="A propos">A propos</a>
             <a href="#competences" alt="Compétences" title="Compétences">Compétences</a>
+            <a href="#services" alt="Services" title="Services">Services</a>
+            <a href="#contact" alt="Contact" title="Me contacter">Contact</a>
         </div>
     </div>
 </div>
@@ -17,9 +20,9 @@
 <div class="right">
     <div class="group">
         <div>
-            <img src="{{ theme_uri }}/assets/img/v.png" alt="Véronique Delauney" title="Véronique Delauney" />
+            <img src="{{ theme_uri }}/assets/img/v.png" alt="{{ site_options.nom_complet }}" title="{{ site_options.nom_complet }}" />
         </div>
         <div>
-            <p>&copy; 2024 - Tous droits réservés</p>
+            {{ site_options.copyright }}
         </div>
 </div>

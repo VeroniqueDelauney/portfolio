@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-<html  {{ site.language_attributes }}>
+<html {{ site.language_attributes }}>
     <head>
-        {% block head %}
-            <title>{{ site.title }}</title>
-        {% endblock %}
         {{ function('wp_head') }}
     </head>
 
@@ -11,16 +8,9 @@
         <div id="page">
 
             <header>
-                <div class="logo">
-                    <img src="{{ theme_uri }}/assets/img/v.png" alt="Véronique Delauney" title="Véronique Delauney" />
-                    <div class="logotype">
-                        Développement Web <span class="purple">&</span> Graphisme
-                    </div>
-                    <br>
-                    <a href="#portfolio">Portfolio</a><br>
-			        <a href="#a-propos">A propos</a><br>
-                    <a href="#competences">Compétences</a><br>
-                </div>		
+                {% block header %}
+                    {% include "parts/header.twig" with {'websites' : websites, 'theme_uri' : theme_uri} %}
+                {% endblock %}                
             </header>    
 
             <main>
@@ -37,5 +27,5 @@
             </section>
             
         </div>        
-    </body>
+    </body>
 </html>

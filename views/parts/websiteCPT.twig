@@ -1,5 +1,6 @@
 <div class="webPreviews">
-    <!-- Slides -->
+    <!-- Slides --> 
+    {% set compteur = 1 %}  
     {% for website in websites %}      
     <div class="block">
         <!-- Scrollable element -->
@@ -14,7 +15,7 @@
         </div>
         <!-- Number and title -->	
         <div class="bottom">
-            <div class="number">0{{ website.numero }}.</div>
+            <div class="number">0{{ compteur }}.</div>
             <div class="title">{{ website.nom }}</div>
             <div class="links">
                 <!-- Link to github -->
@@ -25,12 +26,15 @@
                 {% endif %}
                 <!-- Link to website -->
                 {% if website.lien is not null and website.lien is not empty %}
-                <a href="{{ website.git }}" title="Voir le site web" alt="Voir le site web" target="_blank">
+                <a href="{{ website.lien }}" title="Voir le site web" alt="Voir le site web" target="_blank">
                     <img src="{{ theme_uri }}/assets/img/icon_web.png" alt="Voir le site web" title="Voir le site web" />
                 </a>
                 {% endif %}
             </div>
         </div>
     </div>
-    {% endfor %}
+    {% set compteur = compteur + 1 %}  
+    {% 
+    endfor 
+    %}
 </div>

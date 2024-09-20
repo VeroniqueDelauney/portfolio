@@ -10,6 +10,8 @@ window.onload = function(){
     // Effet fade in au chargement de la page
     document.getElementById("page").style.opacity = "1";
 
+
+    
     // Swiper animation for competencies
     var mySwiper = new Swiper('.swiper-container', {
         loop: true,
@@ -64,6 +66,18 @@ window.onload = function(){
     callAnim(".second", "scroll");
     callAnim(".third", "scroll");
     callAnim(".blocks", "scroll");
+
+
+
+
+    // Loading page    
+    // let loading = document.getElementById("loading");
+    // setTimeout(function() {
+    //     loading.style.opacity = 0;
+    //     setTimeout(function() {
+    //         loading.style.display = "none";
+    //     }, 1300);
+    // }, 1300);
 
 
 

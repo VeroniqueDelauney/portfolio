@@ -1,0 +1,123 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+	<div id="loading">
+		<img src="{{ theme_uri }}/assets/img/v_white.png" alt="Véronique Delauney" title="Véronique Delauney" />
+	</div>
+
+    <main id="primary" class="site-main home">
+
+	<section>
+		<a name="portfolio"></a>
+		<div class="sectionContent">
+			<h2>Portfolio</h2>
+		</div>
+
+
+
+		<!-- Link to websites CPT -->
+		{% include "parts/websiteCPT.twig" with {'websites' : websites, 'theme_uri' : theme_uri} %}
+	</section>
+
+	<section>
+		<a name="a-propos"></a>
+		<div class="sectionContent words">
+			<span class="first">
+				Imaginer.
+			</span> 
+			<span class="second">
+				Créer.
+			</span> 
+			<span class="third">
+				Recommencer.
+			</span>
+		</div>
+	</section>
+
+	<section>		
+		<div class="about">
+			<div class="sectionContent">
+				<div class="left">
+					<img class="portrait" src="{{ get_image(a_propos.image).src('large') }}" alt="{{ site_options.nom_complet }}" title="{{ site_options.nom_complet }}" >
+				</div>
+				<div class="right">
+					<h2>{{ a_propos.title }}</h2>
+					<p>
+						{{ a_propos.content }}
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<a name="competences"></a>
+	<section>
+		<div class="sectionContent">
+			<h2>{{ competences.title }}</h2>
+			<div class="center">
+			{{ competences.content }}
+
+			<!-- Link to competencies CPT -->
+			{% include "parts/competenciesCPT.twig" with {'competencies' : competencies, 'theme_uri' : theme_uri} %}
+		</div>
+	</section>
+
+
+	<!-- Services -->
+	<a name="services"></a>
+	<section>
+		<div class="sectionContent">
+			<h2>{{ services.title }}</h2>
+			<div class="center">
+				{{ services.content }}
+			</div>
+		</div>
+	</section>
+
+	<div class="fullWidth">
+		<div class="blocks">
+			<!-- Link to service blocks CPT -->
+			{% include "parts/serviceBlocksCPT.twig" with {'servicesBlocks' : servicesBlocks, 'theme_uri' : theme_uri} %}			
+		</div>
+	</div>
+
+	<!-- Contact -->
+	<a name="contact"></a>
+	<section>
+		<div class="sectionContent">
+			<h2>{{ contact.title }}</h2>
+			<div class="center">
+				{{ contact.content }}
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="contact">
+			<div class="sectionContent">
+				<div class="left">
+					Téléphone : {{ site_options.telephone }}<br>
+					E-mail : {{ site_options.email }}
+					<hr>
+					<a href="{{ site_options.facebook }}" target="_blank" title="Voir profil Facebook">
+						<img src="{{ theme_uri }}/assets/img/facebook-circle.svg" alt="Véronique Delauney" title="Véronique Delauney" />
+					</a>
+					<a href="{{ site_options.instagram }}" target="_blank" title="Voir profil Instagram">
+						<img src="{{ theme_uri }}/assets/img/instagram.svg" alt="Véronique Delauney" title="Véronique Delauney" class="instagram" />
+					</a>
+					<a href="{{ site_options.linkedin }}" target="_blank" title="Voir profil LinkedIn">
+						<img src="{{ theme_uri }}/assets/img/linkedin-circle.svg" alt="Véronique Delauney" title="Véronique Delauney" />
+					</a>
+				</div>
+				<div class="right">
+					{{ fn("do_shortcode", "[wpforms id = '117']" )}}	
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+</main>
+
+{% endblock %}

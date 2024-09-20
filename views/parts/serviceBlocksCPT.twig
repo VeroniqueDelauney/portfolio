@@ -1,0 +1,13 @@
+<!-- Blocs de service -->
+{% for serviceBlock in servicesBlocks %}  
+    <div class="square" style="background-image: url({{ get_image(serviceBlock.image) }})">
+        <h2 class="titleSquare">{{ serviceBlock.titre }}</h2>
+        <!-- Hidden -->
+        <div class="textBlock">		
+            <p>
+                <span class="title">{{ serviceBlock.titre }}</span><br>
+                {{ serviceBlock.description }}
+            </p>
+        </div>		
+    </div>
+{% endfor %}

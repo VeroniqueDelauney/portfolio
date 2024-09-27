@@ -6,7 +6,7 @@
             <!-- Slides -->
             {% for competency in competencies %}   
                 <div class="swiper-slide">     
-                    <img src="{{ get_image(competency.image).src('medium') }}"  >     
+                    <img src="{{ get_image(competency.image).src('medium') }}" alt="{{ competency.titre }}"  >     
                     <div class="title">{{ competency.titre }}</div>
                     {{ competency.description }}
                 </div>

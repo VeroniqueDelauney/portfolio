@@ -1,6 +1,6 @@
 deploy_prod:
     scheme: "ftp"
-    host: "ftps://waws-prod-par-039.ftp.azurewebsites.windows.net/site/wwwroot"
+    host: "waws-prod-par-039.ftp.azurewebsites.windows.net"
     user: "veroniquedelauney\$veroniquedelauney"
     pass: "qoZRHTLGkX7hFA3pm9YBQqYa4zJxPeEE7L8JlolSC9DKQ51SyXbANctL0Ak6"
     check: true

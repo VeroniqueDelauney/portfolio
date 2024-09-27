@@ -60,46 +60,6 @@
             "append": ""
         },
         {
-            "key": "field_66ec37c31ca10",
-            "label": "Instagram",
-            "name": "instagram",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_66ec37ca1ca11",
-            "label": "LinkedIn",
-            "name": "linkedin",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_66ec382d7541c",
             "label": "E-mail",
             "name": "email",
@@ -181,9 +141,49 @@
             "append": ""
         },
         {
-            "key": "field_66ed9264b97ff",
-            "label": "Facebook",
-            "name": "facebook",
+            "key": "field_66ec37c31ca10",
+            "label": "Instagram",
+            "name": "instagram",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66ec37ca1ca11",
+            "label": "LinkedIn",
+            "name": "linkedin",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66f54e640eec2",
+            "label": "Facebook options",
+            "name": "facebook-options",
             "aria-label": "",
             "type": "group",
             "instructions": "",
@@ -197,7 +197,7 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_66ec2a20df794",
+                    "key": "field_66ed9264b97ff",
                     "label": "Facebook",
                     "name": "facebook",
                     "aria-label": "",
@@ -217,9 +217,9 @@
                     "append": ""
                 },
                 {
-                    "key": "field_66ec8e162c488",
-                    "label": "Facebook image",
-                    "name": "facebook_image",
+                    "key": "field_66f54eb973ec3",
+                    "label": "Facebook icon",
+                    "name": "facebook_icon",
                     "aria-label": "",
                     "type": "image",
                     "instructions": "",
@@ -262,5 +262,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726845768
+    "modified": 1727352730
 }

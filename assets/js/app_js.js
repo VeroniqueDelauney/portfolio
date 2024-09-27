@@ -71,13 +71,13 @@ window.onload = function(){
 
 
     // Loading page    
-    // let loading = document.getElementById("loading");
-    // setTimeout(function() {
-    //     loading.style.opacity = 0;
-    //     setTimeout(function() {
-    //         loading.style.display = "none";
-    //     }, 1300);
-    // }, 1300);
+    let loading = document.getElementById("loading");
+    setTimeout(function() {
+        loading.style.opacity = 0;
+        setTimeout(function() {
+            loading.style.display = "none";
+        }, 1300);
+    }, 1300);
 
 
 

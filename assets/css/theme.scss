@@ -39,29 +39,29 @@ body {
     line-height: 1.5em;
 }
 
-#loading {
-    background-color: $purple;
-    position: fixed;
-    inset: 0;
-    opacity: 1;
-    z-index: 1;
-    transition: opacity 5s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img {
-        width: 8em;
-        animation: spinner 4s linear infinite;
-        @keyframes spinner {
-           from {
-                transform:rotate(0deg);
-           } 
-           to {
-                transform:rotate(360deg);
-            } 
-        }
-    }
-}
+// #loading {
+//     background-color: $purple;
+//     position: fixed;
+//     inset: 0;
+//     opacity: 1;
+//     z-index: 1;
+//     transition: opacity 5s ease;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     img {
+//         width: 8em;
+//         animation: spinner 4s linear infinite;
+//         @keyframes spinner {
+//            from {
+//                 transform:rotate(0deg);
+//            } 
+//            to {
+//                 transform:rotate(360deg);
+//             } 
+//         }
+//     }
+// }
 
 h1 {
     font-family: PlayfairDisplay-Regular;
@@ -166,7 +166,7 @@ h1 {
             height: 250px;
             overflow: hidden;
             border: 1px solid grey;
-            img#nageEquilibre {
+            img.scrollable {
                 width: 100%;
                 &:hover {
                     animation: movingUp 5s linear;

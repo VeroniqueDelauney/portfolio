@@ -33,8 +33,30 @@ document.addEventListener("DOMContentLoaded", (event) => { // On attend que tout
                 slideShadows: false,
             }    
         })
-    
-    
+
+
+        // Retour haut de page
+        var scrollTop = document.querySelector(".backTop");
+        window.onscroll = function(){
+            scrollfunction()
+        };
+        function scrollfunction(){
+            if( document.body.scrollTop > 20 || document.documentElement.scrollTop > 20){
+                scrollTop.style.display = "block";
+            } else {
+                scrollTop.style.display = "none";
+            }
+        }
+        scrollTop.addEventListener("click", function(){
+            window.scrollTo({
+                left: 0,
+                top: 0,
+                behavior: "smooth"
+            })
+        })
+
+
+        
         // Animation des sections + hero
         function callAnim(selecteur, eventToListen) {
             var selecteurs = document.querySelectorAll(selecteur);
@@ -68,17 +90,27 @@ document.addEventListener("DOMContentLoaded", (event) => { // On attend que tout
         callAnim(".third", "scroll");
         callAnim(".blocks", "scroll");
     
+
+        // Scroll haut de page
+        $(window).scroll(function(e){ 
+            var $el = $('.backTop'); 
+            var isPositionFixed = ($el.css('position') == 'fixed');
+            if ($(this).scrollTop() > 200 && !isPositionFixed){ 
+              $el.css({'position': 'fixed', 'bottom': '0px'}); 
+            }
+            if ($(this).scrollTop() < 200 && isPositionFixed){
+              $el.css({'position': 'static', 'bottom': '0px'}); 
+            } 
+        });
     
-    
-    
-        // Loading page    
-        let loading = document.getElementById("loading");
-        setTimeout(function() {
-            loading.style.opacity = 0;
-            setTimeout(function() {
-                loading.style.display = "none";
-            }, 1300);
-        }, 1300);
+        // // Loading page    
+        // let loading = document.getElementById("loading");
+        // setTimeout(function() {
+        //     loading.style.opacity = 0;
+        //     setTimeout(function() {
+        //         loading.style.display = "none";
+        //     }, 1300);
+        // }, 1300);
     
     
     

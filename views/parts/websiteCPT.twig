@@ -17,19 +17,23 @@
         <div class="bottom">
             <div class="number">0{{ compteur }}.</div>
             <div class="title">{{ website.nom }}</div>
-            <div class="links">
+            <div class="links">                
                 <!-- Link to github -->
                 {% if website.git is not null and website.git is not empty %}
-                <a href="{{ website.git }}" title="Voir le Repository Git" alt="Voir le Repository Git" target="_blank">
+                <a href="{{ website.git }}" target="_blank">
                     <img src="{{ theme_uri }}/assets/img/icon_git.png" alt="Voir le Repository Git" title="Voir le Repository Git" />
                 </a>
                 {% endif %}
                 <!-- Link to website -->
                 {% if website.lien is not null and website.lien is not empty %}
-                <a href="{{ website.lien }}" title="Voir le site web" alt="Voir le site web" target="_blank">
+                <a href="{{ website.lien }}">
                     <img src="{{ theme_uri }}/assets/img/icon_web.png" alt="Voir le site web" title="Voir le site web" />
                 </a>
                 {% endif %}
+            </div>
+            <div class="text">
+                <p><strong>Client</strong><br>{{ website.contexte }}</p>
+                <p><strong>Description</strong><br>{{ website.description }}</p>
             </div>
         </div>
     </div>

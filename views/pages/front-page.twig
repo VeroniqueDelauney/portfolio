@@ -3,7 +3,7 @@
 {% block content %}
 
 	<div id="loading">
-		<img src="{{ theme_uri }}/assets/img/v_white.png" alt="Véronique Delauney" title="Véronique Delauney" />
+		<img src="{{ theme_uri }}/assets/img/v_white.png" alt="Véronique Delauney" title="Véronique Delauney">
 	</div>
 
     <main id="primary" class="site-main home">
@@ -39,13 +39,11 @@
 		<div class="about">
 			<div class="sectionContent">
 				<div class="left">
-					<img class="portrait" src="{{ get_image(a_propos.image).src('large') }}" alt="{{ site_options.nom_complet }}" title="{{ site_options.nom_complet }}" >
+					<img class="portrait" src="{{ get_image(a_propos.image).src('large') }}" alt="{{ site_options.nom_complet }}" title="{{ site_options.nom_complet }}">
 				</div>
 				<div class="right">
 					<h2>{{ a_propos.title }}</h2>
-					<p>
-						{{ a_propos.content }}
-					</p>
+					{{ a_propos.content }}
 				</div>
 			</div>
 		</div>
@@ -99,14 +97,14 @@
 					Téléphone : {{ site_options.telephone }}<br>
 					E-mail : {{ site_options.email }}
 					<hr>
-					<a href="{{ site_options.facebook }}" target="_blank" title="Voir profil Facebook">
-						<img src="{{ theme_uri }}/assets/img/facebook-circle.svg" alt="Véronique Delauney" title="Véronique Delauney" />
+					<a href="{{ site_options.facebook }}" target="_blank">
+						<img src="{{ theme_uri }}/assets/img/facebook-circle.svg" alt="Véronique Delauney" title="Véronique Delauney">
 					</a>
-					<a href="{{ site_options.instagram }}" target="_blank" title="Voir profil Instagram">
-						<img src="{{ theme_uri }}/assets/img/instagram.svg" alt="Véronique Delauney" title="Véronique Delauney" class="instagram" />
+					<a href="{{ site_options.instagram }}" target="_blank">
+						<img src="{{ theme_uri }}/assets/img/instagram.svg" alt="Véronique Delauney" title="Véronique Delauney" class="instagram">
 					</a>
-					<a href="{{ site_options.linkedin }}" target="_blank" title="Voir profil LinkedIn">
-						<img src="{{ theme_uri }}/assets/img/linkedin-circle.svg" alt="Véronique Delauney" title="Véronique Delauney" />
+					<a href="{{ site_options.linkedin }}" target="_blank">
+						<img src="{{ theme_uri }}/assets/img/linkedin-circle.svg" alt="Véronique Delauney" title="Véronique Delauney">
 					</a>
 				</div>
 				<div class="right">

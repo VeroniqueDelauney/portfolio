@@ -91,26 +91,16 @@ document.addEventListener("DOMContentLoaded", (event) => { // On attend que tout
         callAnim(".blocks", "scroll");
     
 
-        // Scroll haut de page
-        $(window).scroll(function(e){ 
-            var $el = $('.backTop'); 
-            var isPositionFixed = ($el.css('position') == 'fixed');
-            if ($(this).scrollTop() > 200 && !isPositionFixed){ 
-              $el.css({'position': 'fixed', 'bottom': '0px'}); 
-            }
-            if ($(this).scrollTop() < 200 && isPositionFixed){
-              $el.css({'position': 'static', 'bottom': '0px'}); 
-            } 
-        });
-    
-        // // Loading page    
-        // let loading = document.getElementById("loading");
-        // setTimeout(function() {
-        //     loading.style.opacity = 0;
-        //     setTimeout(function() {
-        //         loading.style.display = "none";
-        //     }, 1300);
-        // }, 1300);
+        
+        
+        // Loading page    
+        let loading = document.getElementById("loading");
+        setTimeout(function() {
+            loading.style.opacity = 0;
+            setTimeout(function() {
+                loading.style.display = "none";
+            }, 1300);
+        }, 1300);
     
     
     
@@ -142,29 +132,26 @@ document.addEventListener("DOMContentLoaded", (event) => { // On attend que tout
         
         
         // Afficher/cacher le bouton hamburger du mobile
-        function showhide() {       
-            var hamburgerIcon = document.querySelector(".hamburger-icon");
-            var menu = document.querySelector(".menu");
-            var logo = document.querySelector(".logo");
-            var close = document.querySelector(".close");
-            if(hamburgerIcon) {
-                hamburgerIcon.addEventListener("click", function() {
-                    hamburgerIcon.classList.toggle("show");
-                    logo.classList.toggle("show");
-                    menu.classList.toggle("show");                
-                    if(close) {
-                        close.classList.toggle("show");
-                        close.addEventListener("click", function() {
-                            logo.classList.toggle("show");
-                            menu.classList.toggle("show");
-                            hamburgerIcon.classList.toggle("show");
-                            close.classList.toggle("show");
-                        })
-                    }                
-                });
-            };        
-        }
-        showhide();   
+        var hamburgerIcon = document.querySelector(".hamburger-icon");
+        var menu = document.querySelector(".menu");
+        var logo = document.querySelector(".logo");
+        var close = document.querySelector(".close");
+        if(hamburgerIcon) {
+            hamburgerIcon.addEventListener("click", function() {
+                hamburgerIcon.classList.toggle("show");
+                logo.classList.toggle("show");
+                menu.classList.toggle("show");                
+                if(close) {
+                    close.classList.toggle("show");                        
+                }                
+            });
+            close.addEventListener("click", function() {
+                logo.classList.toggle("show");
+                menu.classList.toggle("show");
+                hamburgerIcon.classList.toggle("show");
+                close.classList.toggle("show");
+            });
+        };       
         
         
     };

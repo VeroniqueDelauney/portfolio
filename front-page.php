@@ -31,8 +31,6 @@ $argsServices = array(
 );
 $context['servicesBlocks'] = get_posts($argsServices);
 
-
-
 $context['services'] = get_field("services");
 $context['competences'] = get_field("competences");
 $context['contact'] = get_field("contact");

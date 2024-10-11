@@ -1,10 +1,11 @@
 deploy_prod:
     scheme: "ftp"
-    host: "waws-prod-par-035.ftp.azurewebsites.windows.net"
-    user: "veroniquedelauney\$veroniquedelauney"
-    pass: "jtMcoznod3YvofdAwtZhAFu2b1ugcN9wbZ7wBDlNTRvNeoaDlCxJeh4iTG72"
+    host: "access-5016466381.webspace-host.com"
+    user: "a553706"
+    pass: "@kilometre0@_2024*"
     check: true
     path:
         local: "/"
-        remote: "/site/wwwroot/wp-content/themes/veronique_theme/"
+        # remote: "/site/wwwroot/wp-content/themes/veronique_theme/"
+        remote: "/clickandbuilds/Portfolio/wp-content/themes/veronique_theme/"
     exclude: ["dploy.yaml"]
